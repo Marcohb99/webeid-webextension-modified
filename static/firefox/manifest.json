@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "Web eID Modified",
+  "version": "{{package.version}}",
+
+  "description": "(TFG) The Web eID extension enables usage of European Union electronic identity smart cards for secure authentication and digital signing of documents on the web using public-key cryptography.",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{e68418bc-f2b0-4459-a9ea-3e72b6751b07}"
+    }
+  },
+
+  "icons": {
+    "128": "icons/r-uma.jpg"
+  },
+
+  "content_scripts": [
+    {
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/r-uma.jpg"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "*://*/*",
+    "webRequest",
+    "webRequestBlocking",
+    "nativeMessaging"
+  ]
+}
